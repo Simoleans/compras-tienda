@@ -116,8 +116,8 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: `Quasargram`,
-        short_name: `Quasargram`,
+        name: `MiniMarket 1923`,
+        short_name: `MiniMarket 1923`,
         description: `Practica con quasar, haciendo un instagram`,
         display: 'standalone',
         orientation: 'portrait',
@@ -184,7 +184,7 @@ module.exports = function (/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'quasargram'
+        appId: 'minimarket'
       },
 
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
