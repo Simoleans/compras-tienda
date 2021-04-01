@@ -1,22 +1,40 @@
-# Quasargram (quasargram)
+<h1 align="center">Hola 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://twitter.com/futFran" target="_blank">
+    <img alt="Twitter: futFran" src="https://img.shields.io/twitter/follow/futFran.svg?style=social" />
+  </a>
+</p>
 
-Practica con quasar, haciendo un instagram
+> Aplicación (Escritorio/Web) - Facturación - Creado en VueJS y Quasar
 
-## Install the dependencies
-```bash
+## Instalación
+
+```sh
+git clone
+
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
+## ¿Como usarlo?
+
+```sh
 quasar dev
+
+```
+## Bukld SPA y .exe
+
+```sh
+quasar build (SPA)
+
+quasar build -m electron (.exe)
+
 ```
 
 
-### Build the app for production
-```bash
-quasar build
-```
+## RRSS
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+* Website: https://simoleans.github.io/CV/
+* Twitter: [@futFran](https://twitter.com/futFran)
+* Github: [@simoleans](https://github.com/simoleans)
+* LinkedIn: [@futfran](https://linkedin.com/in/futfran)
