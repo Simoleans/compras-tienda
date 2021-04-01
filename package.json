@@ -1,8 +1,8 @@
 {
-  "name": "quasargram",
+  "name": "minimarket",
   "version": "0.0.1",
-  "description": "Practica con quasar, haciendo un instagram",
-  "productName": "Quasargram",
+  "description": "Ventas",
+  "productName": "MiniMarket 1923",
   "author": "Fran <francisco20990@gmail.com>",
   "private": true,
   "scripts": {
