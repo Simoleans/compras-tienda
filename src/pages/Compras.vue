@@ -28,7 +28,11 @@
                 {{ props.row.total_bs }}
               </q-td>
               <q-td key="ver" :props="props">
-                <q-btn  :to="props.row.id" round color="primary" icon="visibility" />
+                <q-btn  :to="'compra/'+props.row.id" round color="primary" icon="visibility">
+                  <q-tooltip content-class="bg-amber text-black shadow-4" :offset="[10, 10]">
+                    Ver Compra
+                  </q-tooltip>
+                </q-btn>
               </q-td>
           </q-tr>
           </template>

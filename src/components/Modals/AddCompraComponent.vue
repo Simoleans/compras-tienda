@@ -243,7 +243,9 @@ export default {
                       total: this.totalCompra,
                       total_bs : this.formatPrice(this.precioBs),
                       descripcion : this.dataForm.description,
-                      ...compraProductos
+                      data : {
+                        ...compraProductos
+                      }
                   })
                   .then(async () => {
                       this.$q.notify({

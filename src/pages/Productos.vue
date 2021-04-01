@@ -37,7 +37,11 @@
                   {{ props.row.precio_general }}
                </q-td>
                <q-td key="eliminar" :props="props">
-                  <q-btn round color="negative" icon="delete" @click="deleteProduct(props.row.id)" />
+                  <q-btn round color="negative" icon="delete" @click="deleteProduct(props.row.id)">
+                     <q-tooltip content-class="bg-red text-black shadow-4" :offset="[10, 10]">
+                        Eliminar Producto
+                     </q-tooltip>
+                  </q-btn>
                </q-td>
             </q-tr>
             </template>
