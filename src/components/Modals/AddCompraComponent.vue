@@ -22,11 +22,11 @@
             :filter="search"
           >
             <template v-slot:body="props">
-              <q-tr :props="props">
+              <q-tr :props="props" :class="{'bg-red-3' : props.row.stock <= 4}">
                 <q-td key="desc" :props="props">
                     {{ props.row.name  }}
                 </q-td>
-                <q-td key="stock" :props="props">
+                <q-td key="stock" :props="props" >
                     {{ props.row.stock }}
                 </q-td>
                 <q-td key="precio" :props="props">

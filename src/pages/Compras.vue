@@ -100,6 +100,7 @@ export default {
           this.dialog = false;
       });
       this.$root.$on('saveCompra', () => {
+        this.getAllcompras();
       });
   },
     mounted() {
