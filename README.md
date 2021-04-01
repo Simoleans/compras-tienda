@@ -22,7 +22,7 @@ npm install
 quasar dev
 
 ```
-## Bukld SPA y .exe
+## Build SPA y .exe
 
 ```sh
 quasar build (SPA)
