@@ -12,11 +12,13 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
+    "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "firebase": "^8.3.1",
     "moment": "^2.29.1",
     "push-dir": "^0.4.1",
-    "quasar": "^1.0.0"
+    "quasar": "^1.0.0",
+    "vue-trend-chart": "^0.15.3"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",

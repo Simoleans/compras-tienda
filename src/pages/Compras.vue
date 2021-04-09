@@ -87,8 +87,8 @@ export default {
             style: 'max-width: 100px',
             headerClasses: 'bg-primary text-white'
           },
-          { name: 'descripcion', align: 'center', label: 'Descripción', field: 'descripcion', sortable: true },
           { name: 'hora', label: 'Hora', field: 'hora', sortable: true},
+          { name: 'descripcion', align: 'center', label: 'Descripción', field: 'descripcion', sortable: true },
           { name: 'total', label: 'TOTAL ($)', field: 'total' },
           { name: 'total_bs', label: 'TOTAL BS', field: 'total_bs' },
           { name: 'ver', label: 'Ver', field: 'eliminar', headerClasses: 'bg-primary text-white',classes: 'bg-blue-2 ellipsis', },
