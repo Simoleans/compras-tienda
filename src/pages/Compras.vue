@@ -37,11 +37,18 @@
           </q-tr>
           </template>
           <template v-slot:top-right>
-          <q-input borderless dense debounce="300" v-model="search" placeholder="Search">
-              <template v-slot:append>
-                <q-icon name="search" />
-              </template>
-          </q-input>
+            <q-input borderless dense debounce="300" v-model="search" placeholder="Search">
+                <template v-slot:append>
+                  <q-icon name="search" />
+                </template>
+            </q-input>
+            <q-btn
+              color="primary"
+              icon-right="archive"
+              label="CSV"
+              no-caps
+              @click="exportTable"
+            />
           </template>
         </q-table>
         <div class="absolute-top text-center q-mt-sm">
@@ -64,6 +71,27 @@
 import AddCompra from 'src/components/Modals/AddCompraComponent.vue'
 import PriceDolar from 'src/components/PriceDolar.vue'
 import { db } from 'boot/firebase';
+import { exportFile } from 'quasar'
+
+function wrapCsvValue (val, formatFn) {
+  let formatted = formatFn !== void 0
+    ? formatFn(val)
+    : val
+
+  formatted = formatted === void 0 || formatted === null
+    ? ''
+    : String(formatted)
+
+  formatted = formatted.split('"').join('""')
+  /**
+   * Excel accepts \n and \r in strings, but some other CSV parsers do not
+   * Uncomment the next two lines to escape new lines
+   */
+  // .split('\n').join('\\n')
+  // .split('\r').join('\\r')
+
+  return `"${formatted}"`
+}
 
 export default {
   components : { AddCompra,PriceDolar },
@@ -137,6 +165,31 @@ export default {
                   })
                 });
       },
+      exportTable () {
+      // naive encoding to csv format
+      const content = [ this.columns.map(col => wrapCsvValue(col.label)) ].concat(
+        this.datos.map(row => this.columns.map(col => wrapCsvValue(
+          typeof col.field === 'function'
+            ? col.field(row)
+            : row[col.field === void 0 ? col.name : col.field],
+          col.format
+        )).join(','))
+      ).join('\r\n')
+
+      const status = exportFile(
+        'compras.csv',
+        content,
+        'text/csv'
+      )
+
+      if (status !== true) {
+        this.$q.notify({
+          message: 'Browser denied file download...',
+          color: 'negative',
+          icon: 'warning'
+        })
+      }
+    }
   }
 }
 </script>
